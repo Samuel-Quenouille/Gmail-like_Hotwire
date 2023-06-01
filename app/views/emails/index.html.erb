@@ -1,0 +1,11 @@
+<h1>Liste des emails</h1>
+<%= turbo_frame_tag "new_email" do %>
+
+<ul id="email-list">
+  <% @emails.each do |email| %>
+    <%= render 'email', email: email%>
+  <% end %>
+</ul>
+<% end %>
+
+<%= button_to "Recevoir un email", emails_path, data: { turbo_frame: "new_email" } %>
